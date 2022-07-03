@@ -23,6 +23,11 @@ const archiveSchema = new Schema({
 		type: Date,
 		required: true,
 		default: Date.now
+	},
+	autor: {
+		type: String,
+		required: true,
+		default: 'Corrupted'
 	}
 });
 archiveSchema.plugin(random);
