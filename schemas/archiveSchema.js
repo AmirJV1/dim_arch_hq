@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-
+var random = require('mongoose-simple-random');
 const archiveSchema = new Schema({
 	bCreation: {
 		type: String,
@@ -25,5 +25,5 @@ const archiveSchema = new Schema({
 		default: Date.now
 	}
 });
-
+archiveSchema.plugin(random);
 module.exports = mongoose.model('archive', archiveSchema);
