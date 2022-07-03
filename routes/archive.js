@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
 	const { id } = req.params;
 	try {
 		const archive = await Archives.findById(id);
-		return res.json(archive);
+		return res.json({archive, success: true});
 	} catch (error) {
 		res.json({ success: false });
 	}
