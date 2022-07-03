@@ -8,6 +8,7 @@ const Archives = require('../schemas/archiveSchema');
 router.get('/rand', (req, res) => {
 	Archives.findRandom({}, {}, { limit: 30 }, function (err, results) {
 		if (!err) {
+			console.log(results)
 			return res.json(results);
 		} else {
 			return res.json({ success: false, error: err });
@@ -15,7 +16,7 @@ router.get('/rand', (req, res) => {
 	});
 });
 router.post('/create', async (req, res) => {
-	const { bCreation, dMsg, dTitle } = req.body;
+	const { bCreation, dMsg, dTitle, autor } = req.body;
 	try {
 		const data = { bCreation, dMsg, dTitle, autor };
 		console.log(data);
