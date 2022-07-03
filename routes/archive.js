@@ -17,7 +17,7 @@ router.get('/rand', (req, res) => {
 router.post('/create', async (req, res) => {
 	const { bCreation, dMsg, dTitle } = req.body;
 	try {
-		const data = { bCreation, dMsg, dTitle };
+		const data = { bCreation, dMsg, dTitle, autor };
 		const archive = await Archives.create(data);
 		return res.json({ archive, success: true, error: '' });
 	} catch (error) {

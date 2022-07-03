@@ -27,7 +27,7 @@ const archiveSchema = new Schema({
 	autor: {
 		type: String,
 		required: true,
-		default: 'Corrupted'
+		default: 'Unknown'
 	}
 });
 archiveSchema.plugin(random);
