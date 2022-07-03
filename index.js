@@ -34,6 +34,8 @@ const connectToDB = async () => {
 };
 connectToDB();
 
-app.get('/api', (req, res) => res.send('Hello World!'));
+app.get('/api', (req, res) => {
+	return res.json({ msg: 'Hello World!' });
+});
 app.use('/api/archive', archiveRoute);
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

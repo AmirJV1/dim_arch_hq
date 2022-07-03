@@ -2,8 +2,6 @@
 const express = require('express');
 const router = express.Router();
 require('dotenv').config();
-//mongoose random
-const random = require('mongoose-simple-random');
 
 const Archives = require('../schemas/archiveSchema');
 
