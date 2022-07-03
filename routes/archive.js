@@ -18,8 +18,10 @@ router.post('/create', async (req, res) => {
 	const { bCreation, dMsg, dTitle } = req.body;
 	try {
 		const data = { bCreation, dMsg, dTitle, autor };
+		console.log(data);
 		const archive = await Archives.create(data);
-		return res.json({ archive, success: true, error: '' });
+		console.log(archive);
+		return res.json({ archive, success: true });
 	} catch (error) {
 		return res.json({ success: false, error });
 	}
