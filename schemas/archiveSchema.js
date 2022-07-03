@@ -1,24 +1,27 @@
 const mongoose = require('mongoose');
-const { schema } = mangoose;
+const { Schema } = mongoose;
 
-const archiveSchema = new schema({
+const archiveSchema = new Schema({
 	bCreation: {
 		type: String,
 		required: true,
-		maxLength: 100
+		maxLength: 100,
+		default: 'Unknown'
+	},
+	dTitle: {
+		type: String,
+		required: true,
+		default: 'Unknown'
 	},
 	dMsg: {
 		type: String,
 		required: true,
-		maxLength: 2500
+		maxLength: 2500,
+		default: 'Error Corrupted Files'
 	},
-	dName: {
-		Type: String,
+	dDate: {
+		type: Date,
 		required: true,
-		maxLength: 100
-	},
-	recDate: {
-		Type: Date,
 		default: Date.now
 	}
 });
